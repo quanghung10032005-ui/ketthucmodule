@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Nhập tháng và năm theo định dạng MM/yyyy (Ví dụ: 02/2026):");
+        let regex = /^(0[1-9]|1[0-2])\/[0-9]{4}$/;
+        while (!regex.test(input)) {
+            input = prompt("Định dạng không hợp lệ. Vui lòng nhập lại theo định dạng MM/yyyy:");
+        }
+        let [month, year] = input.split("/").map(Number);
+        function kiemtrangay(month,year){
+        for(let i=1;i<=12;i++){
+            if(month==i){
+                switch(i){
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        document.write("Tháng "+i+" có 31 ngày.");
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        document.write("Tháng "+i+" có 30 ngày.");
+                        break;
+                    case 2:
+                        if((year%4==0 && year%100!=0) || (year%400==0)){
+                            document.write("Tháng "+i+" có 29 ngày.");
+                        }
+                        else{
+                            document.write("Tháng "+i+" có 28 ngày.");
+                        }
+                        break;
+                }
+            }
+        }
+    }
+    kiemtrangay(month,year);
+    </script>
+</body>
+</html>

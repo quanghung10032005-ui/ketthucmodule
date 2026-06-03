@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[];
+        let n=parseInt(prompt("Nhập số phần tử của mảng:"));
+        do {
+            if(n>=50) {
+               n=parseInt(prompt("Số phần tử phải nhỏ hơn 50. Vui lòng nhập lại."));
+            }
+
+        }
+        while (n>=50);
+        function nhapmang(){
+            for (let i=0;i<n;i++){
+                arr[i]=parseInt(prompt("Nhập phần tử thứ "+(i+1)+":")  );
+                arr.push(arr[i]);
+            }
+        }
+        
+        function xuatmang(){
+            document.write("Mảng vừa nhập là: <br>");
+            for (let i=0;i<n;i++){
+                document.write(arr[i]+"<br>");
+            }
+        }
+        function tbc(arr,n){
+            let sum=0;
+            let count=0;
+            for(let i=0;i<n;i++){
+                if(arr[i]%3==0){
+                    sum+=arr[i];
+                    count++;
+                }
+            }
+            return count > 0 ? (sum / count) : 0;
+        }
+        nhapmang();
+        xuatmang();
+        document.write("Trung bình cộng các phần tử chia hết cho 3 là: "+tbc(arr,n));
+    </script>
+</body>
+</html>
