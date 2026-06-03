@@ -24,10 +24,14 @@
         }
         
         function xuatmang(){
-            document.write("Mảng vừa nhập là: <br>");
+            document.write("Mảng vừa nhập là: [");
             for (let i=0;i<n;i++){
-                document.write(arr[i]+"<br>");
+                document.write(arr[i]);
+                if (i < n - 1) {
+                    document.write(", ");
+                }
             }
+            document.write("] <br>");
         }
         function tbc(arr,n){
             let sum=0;

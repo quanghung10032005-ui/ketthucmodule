@@ -13,11 +13,6 @@
             input = prompt("Định dạng không hợp lệ. Vui lòng nhập lại theo định dạng MM/yyyy:");
         }
         let [month, year] = input.split("/").map(Number);
-        while(month < 1 || month > 12 || year < 1) {
-            input = prompt("Dữ liệu không hợp lệ. Vui lòng nhập lại theo định dạng MM/yyyy:");
-            [month, year] = input.split("/").map(Number);
-        }
-
         function kiemtrangay(month,year){
         for(let i=1;i<=12;i++){
             if(month==i){
